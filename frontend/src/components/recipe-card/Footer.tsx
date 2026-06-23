@@ -6,11 +6,11 @@ export function Footer() {
       </p>
 
       <p className="app-footer__line">
-        telefono • +39 2345432345| email • kevin.bruno.conte@gmail.com
+        telefono • +39 2345432345| email • kevininf2005@gmail.com
       </p>
 
       <p className="app-footer__copyright">
-        © {new Date().getFullYear()} ZampaCasa - All rights reserved.
+        © {new Date().getFullYear()} WorkSpaceNow - All rights reserved.
       </p>
     </footer>
   )

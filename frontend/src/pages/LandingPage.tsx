@@ -3,10 +3,7 @@ import {
   HeroSection,
 
 } from '../components/landing'
-import logo from '../assets/logo.png'
-import immagine1 from '../assets/bobilcarlino.png'
-import immagine2 from '../assets/meticcio.png'
-import immagine3 from '../assets/maremmanolabrador.png'
+
 import { Footer } from '../components/recipe-card/Footer'
 import { StorySection } from '../pages/StorySection'
 import { WhySection } from '../pages/WhySection'
@@ -17,21 +14,7 @@ import { WhySection } from '../pages/WhySection'
 type LandingPageProps = {
   onGoToAuth: () => void
 }
-const technologyImageLinks = [
-  {
-    src: immagine2,
-    alt: 'Il meticcio'
-  },
-  {
-    src: immagine1,
-    alt: 'Bob il carlino',
-  },
-  {
-    src: immagine3,
-    alt: 'Maremmanolabrador',
 
-  },
-]
 
 
 
@@ -46,54 +29,53 @@ export function LandingPage({ onGoToAuth }: LandingPageProps) {
   return (
     <main className="landing-page">
       <HeroSection
-        kicker="ZampaCasa"
-        title="Benevenuto/a su ZampaCasa!"
-        description="Un portale dedicato per salvare animali in difficoltà!"
-        primaryActionLabel="Compila il form e richiedi la disponibiltà di adozione!"
+        kicker="WorkSpaceNow"
+        title="Ti diamo il benvenuto su WorkSpaceNow"
+        description="Un portale nato per offrire spazi di coworking per freelance, startup e studenti!"
+        primaryActionLabel="Compila il form e richiedi subito uno spazio!"
         onPrimaryAction={scrollToRegistration}
-        imageUrl={logo}
+
 
       />
+
       <StorySection />
       <WhySection />
       <section className="landing-section">
-        <h2>Alcuni dei nostri compagni</h2>
+        <h2>Alcuni dei nostri spazi!</h2>
         <div className="cards-grid">
 
           <article className="info-card">
-            <h3>Berlino il meticcio</h3>
-            <p>Specie: meticcio</p>
-            <p>Età: 3 anni</p>
-            <p>Descrizione: Berlino è un animale gentile e fedele, che ama giocare e fare lunghe passeggiate.</p>
+            <h3>Ufficio bicocca</h3>
+            <p>Città: Milano</p>
+            <p>Descrizione: Ufficio bicocca è una dei nostri nuovi spazi di lavoro , dispone di molte sale riunioni e ambianti di lavoro dove potrai performare al meglio</p>
+            <p>Servizi: 3 Sale riunioni, 10 ambienti di lavoro/studio, area bar per una break time, area fumatori</p>
           </article>
 
           <article className="info-card">
-            <h3>Bob il carlino</h3>
-            <p>Specie: carlino</p>
-            <p>Età: 5 anni</p>
-            <p>Descrizione: Bob è un carlino dolce e affettuoso, alla ricerca di una famiglia amorevole che lo accolga.</p>
+            <h3>Ufficio Merlata Bloom</h3>
+            <p>Città: Milano</p>
+            <p>Descrizione: Ufficio Melrata Bloom è una dei nostri spazi di lavoro più grandi , dispone di molte sale riunioni e ambianti di lavoro dove potrai performare al meglio</p>
+            <p>Servizi: 2 Sale riunioni, 20 ambienti di lavoro/studio, area bar per una break time, giardino per una pausa all'aperto</p>
           </article>
 
           <article className="info-card">
-            <h3>Mario il labrador</h3>
-            <p>Specie: labrador</p>
-            <p>Età: 2 anni</p>
-            <p>Descrizione: Mario è un cane allegro e socievole, che ama correre e nuotare.</p>
+            <h3>Ufficio OrioCenter</h3>
+            <p>Città: Orio al Serio</p>
+            <p>Ufficio bicocca è una dei nostri spazi di lavoro più grandi , dispone di molte sale riunioni e ambianti di lavoro dove potrai performare al meglio</p>
+            <p>Servizi: 6 Sale riunioni, 35 ambienti di lavoro/studio, area bar per una break time, area fumatori, terrazza per una eventuale pausa sigaretta</p>
           </article>
 
         </div>
 
         <div className="section-gallery">
-          {technologyImageLinks.map((image) => (
-            <img key={image.src} src={image.src} alt={image.alt} loading="lazy" />
-          ))}
+
         </div>
 
       </section>
 
 
       <section id="registration" className="landing-section">
-        <h2>Vuoi adottare uno dei nostri compagni? , Accedi o registrati e compila il form nella tua area personale!.</h2>
+        <h2>Vuoi far uso di uno dei nostri spazi? , Accedi o registrati e compila il form nella tua area personale!.</h2>
         <p className="subtitle">
 
         </p>

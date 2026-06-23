@@ -19,7 +19,7 @@ export function WhySection() {
                                 <span className="timeline__label">Motivo 1</span>
                                 <h3 className="timeline__heading">Affidabilità</h3>
                                 <p className="timeline__text">
-                                    Collaboriamo solo con canili certificati e affidabili, garantendo che ogni cane presente sulla nostra piattaforma sia in buone condizioni di salute e ben curato. La sicurezza e il benessere degli animali sono la nostra priorità assoluta.
+                                    Collaboriamo solo aree di lavoro affidabili che ragantiscono disponibilità, sicurezza e versatilità.
                                 </p>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ export function WhySection() {
                                 <span className="timeline__label">Motivo 2</span>
                                 <h3 className="timeline__heading">Trasparenza</h3>
                                 <p className="timeline__text">
-                                    Il nostro processo di adozione è semplice e trasparente. Offriamo un'interfaccia intuitiva che guida gli utenti attraverso ogni fase del processo, dalla ricerca del cane ideale alla finalizzazione dell'adozione. Siamo sempre disponibili per supportare i nostri utenti e rispondere a qualsiasi domanda o dubbio.
+                                    Il nostro processo di prentoazione è semplice, scegli il luogo adatto al tuo lavoro, compila il form e il gioco è fatto.
                                 </p>
                             </div>
                         </div>
@@ -39,9 +39,9 @@ export function WhySection() {
                             <div className="htimeline__dot">❤️</div>
                             <div className="htimeline__card">
                                 <span className="timeline__label">Motivo 3</span>
-                                <h3 className="timeline__heading">Alta riduzione di randagismo</h3>
+                                <h3 className="timeline__heading">Aumentiamo la tua produttività</h3>
                                 <p className="timeline__text">
-                                    Riduciamo drasticamente il randagismo, dando una seconda possibilità a cani che altrimenti rimarrebbero senza casa. Ogni adozione è un passo verso un mondo in cui ogni cane ha una famiglia amorevole e una casa per sempre.
+                                    Aumentiamo drasticamente la tua produttività facendoti accedere ad ambianti di lavoro appositi per te!
                                 </p>
                             </div>
                         </div>

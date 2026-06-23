@@ -30,7 +30,6 @@ export function HeroSection({
           <h1 className="hero-section__title">{title}</h1>
           <p className="hero-section__description">{description}</p>
           <div className="hero__visual" aria-hidden="true">
-            <div className="hero__orb hero__orb--main">🐶</div>
 
           </div>
           <div className="hero-section__actions">

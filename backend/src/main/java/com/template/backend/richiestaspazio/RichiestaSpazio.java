@@ -1,4 +1,4 @@
-package com.template.backend.richiestaadozione;
+package com.template.backend.richiestaspazio;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,8 +11,8 @@ import jakarta.persistence.Table;
 
 @Entity
 // nome della tabella
-@Table(name = "Richiesta Adozione")
-public class RichiestaAdozione {
+@Table(name = "Richiesta Spazio")
+public class RichiestaSpazio {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,37 +22,35 @@ public class RichiestaAdozione {
   private String nomecognome;
 
   @Column(nullable = false, length = 100)
-  private String categoria;
+  private String spazio;
 
   @Column(nullable = false, columnDefinition = "TEXT")
   private String descrizione;
 
   @Column(nullable = false, length = 255)
-  private String abitazione;
+  private String numeropersone;
 
   @Column(nullable = false, length = 191)
   private String email;
   @Column(nullable = false, length = 191)
   private String città;
-  @Column(nullable = false, length = 191)
-  private String animale;
 
   @Enumerated(EnumType.STRING)
   @Column(nullable = false, length = 20)
   private StatoApprovazione stato = StatoApprovazione.IN_ATTESA;
 
-  RichiestaAdozione() {
+  RichiestaSpazio() {
   }
 
-  public RichiestaAdozione(String nomecognome, String categoria, String descrizione, String città, String email,
-      String abitazione, String animale) {
+  public RichiestaSpazio(String nomecognome, String spazio, String descrizione, String città, String email,
+      String numeropersone) {
     this.nomecognome = nomecognome;
-    this.categoria = categoria;
+    this.spazio = spazio;
     this.descrizione = descrizione;
     this.città = città;
     this.email = email;
-    this.abitazione = abitazione;
-    this.animale = animale;
+    this.numeropersone = numeropersone;
+
     this.stato = StatoApprovazione.IN_ATTESA;
   }
 
@@ -64,8 +62,8 @@ public class RichiestaAdozione {
     return nomecognome;
   }
 
-  public String getCategoria() {
-    return categoria;
+  public String getspazio() {
+    return spazio;
   }
 
   public String getDescrizione() {
@@ -80,8 +78,8 @@ public class RichiestaAdozione {
     return email;
   }
 
-  public String getAnimale() {
-    return animale;
+  public String getnumeropersone() {
+    return numeropersone;
   }
 
   public StatoApprovazione getStato() {

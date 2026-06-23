@@ -1,4 +1,4 @@
-package com.template.backend.richiestaadozione;
+package com.template.backend.richiestaspazio;
 
 import jakarta.validation.Valid;
 import java.util.List;
@@ -12,32 +12,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/richieste-adozione")
-public class RichiestaAdozioneController {
+@RequestMapping("/api/RichiestaSpazio")
+public class RichiestaSpazioController {
 
-  private final RichiestaAdozioneRepository repository;
+  private final RichiestaSpazioRepository repository;
 
-  public RichiestaAdozioneController(RichiestaAdozioneRepository repository) {
+  public RichiestaSpazioController(RichiestaSpazioRepository repository) {
     this.repository = repository;
   }
 
   @PostMapping
-  public ResponseEntity<Map<String, String>> creaEvento(@Valid @RequestBody RichiestaAdozioneRequest request) {
-    RichiestaAdozione evento = new RichiestaAdozione(
+  public ResponseEntity<Map<String, String>> RichiestaSpazio(@Valid @RequestBody RichiestaSpazioRequest request) {
+    RichiestaSpazio evento = new RichiestaSpazio(
         request.nomecognome(),
-        request.categoria(),
-        request.descrizione(),
-        request.città(),
         request.email(),
-        request.abitazione(),
-        request.animale());
+        request.città(),
+        request.spazio(),
+        request.descrizione(),
+        request.numeropersone()
+
+    );
     repository.save(evento);
     return ResponseEntity.status(HttpStatus.CREATED)
-        .body(Map.of("message", "Richiesta di adozione inviata con successo"));
+        .body(Map.of("message", "Richiesta dello spazio inviata con successo"));
   }
 
   @GetMapping
-  public List<RichiestaAdozione> listaEventi() {
+  public List<RichiestaSpazio> richiestaSpazio() {
     return repository.findAll();
   }
 }

@@ -11,10 +11,9 @@ const apiBase = buildApiBase(import.meta.env.VITE_API_URL)
 
 export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
   const [nomecognome, setNomeCognome] = useState('')
-  const [categoria, setCategoria] = useState('')
   const [città, setCittà] = useState('')
-  const [nomeanimale, setnomeanimale] = useState('')
-  const [tipoabitazione, setTipoAbitazione] = useState('')
+  const [spazio, setspazio] = useState('')
+  const [numeropersone, setnumeropersone] = useState('')
   const [descrizione, setDescrizione] = useState('')
   const [emailEvento, setEmail] = useState(email)
   const [loading, setLoading] = useState(false)
@@ -28,16 +27,15 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
     setErrore('')
 
     try {
-      const response = await fetch(`${apiBase}/richieste-adozione`, {
+      const response = await fetch(`${apiBase}/RichiestaSpazio`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           nomecognome,
-          categoria,
           città,
-          animale: nomeanimale,
+          spazio: spazio,
           email: email,
-          abitazione: tipoabitazione,
+          numeropersone: numeropersone,
           descrizione,
         }),
       })
@@ -50,11 +48,10 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
       const body = await response.json()
       setMessaggio(body.message)
       setNomeCognome('')
-      setCategoria('')
       setCittà('')
-      setnomeanimale('')
+      setspazio('')
       setDescrizione('')
-      setTipoAbitazione('')
+      setnumeropersone('')
       setEmail(email)
     } catch (err) {
       setErrore(err instanceof Error ? err.message : 'Errore di rete')
@@ -68,7 +65,7 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
       <section className="card home-card">
         <header className="home-header">
           <div>
-            <h1>MODULO DI RICHIESTA ADOZIONE</h1>
+            <h1>MODULO DI RICHIESTA SPAZIO LAVORATIVO</h1>
             <p className="subtitle">
               Login effettuato con <strong>{email}</strong>
             </p>
@@ -79,7 +76,7 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
         </header>
 
         <p className="placeholder-text">
-          Di seguito compila il modulo per richiedere l'adozione di uno dei nostri amici a quattro zampe. Il nostro team esaminerà la tua richiesta e ti contatterà al più presto per discutere i dettagli dell'adozione. Grazie per il tuo interesse nel dare una casa amorevole a uno dei nostri compagni!
+          Di seguito compila il modulo per richiedere uno spazio di lavoro dove potrai performare e portare al top la tua attività/studio
         </p>
 
         {messaggio && <p className="success-message">{messaggio}</p>}
@@ -88,30 +85,9 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Nome e Cognome"
+            placeholder="NomeCognome/Azienda"
             value={nomecognome}
             onChange={(e) => setNomeCognome(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Categoria"
-            value={categoria}
-            onChange={(e) => setCategoria(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Città di residenza"
-            value={città}
-            onChange={(e) => setCittà(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Nome dell'animale"
-            value={nomeanimale}
-            onChange={(e) => setnomeanimale(e.target.value)}
             required
           />
           <input
@@ -121,16 +97,32 @@ export function DashboardPage({ email, onBackToLanding }: DashboardPageProps) {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
             type="text"
-            placeholder="Tipo di Abitazione"
-            value={tipoabitazione}
-            onChange={(e) => setTipoAbitazione(e.target.value)}
+            placeholder="Città"
+            value={città}
+            onChange={(e) => setCittà(e.target.value)}
             required
           />
           <input
             type="text"
-            placeholder="Descrizione"
+            placeholder="Spazio Selezionato"
+            value={spazio}
+            onChange={(e) => setspazio(e.target.value)}
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Numero di persone"
+            value={numeropersone}
+            onChange={(e) => setnumeropersone(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Descrizione attività"
             value={descrizione}
             onChange={(e) => setDescrizione(e.target.value)}
             required
