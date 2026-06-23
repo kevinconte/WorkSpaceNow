@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "backend/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "backend",
+        "command": "node ./scripts/run-backend.mjs"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "backend",
+        "command": "mvn -f pom.xml -Dmaven.repo.local=../.m2/repository clean package -DskipTests"
+      },
+      "outputs": ["{workspaceRoot}/backend/target"]
+    }
+  },
+  "tags": []
+}

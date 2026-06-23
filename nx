@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Wrapper locale per Nx Console: forza l'uso di nx del workspace corrente.
+exec "$(dirname "$0")/node_modules/.bin/nx" "$@"
